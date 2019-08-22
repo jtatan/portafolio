@@ -2,10 +2,11 @@ from django.db import models
 
 
 class Skill(models.Model):
-    opciones = [
-        ('dev'), ('Desarrollo'),
-        ('cgi'), ('CGI')
-    ]
+    opciones = {
+        ('dev', 'Desarrollo'),
+        ('cgi', 'CGI')
+    }
+
     nombre = models.CharField(max_length=30, verbose_name='Nombre')
     porcentaje = models.PositiveIntegerField(default=50, verbose_name='Porcentaje')
     categoria = models.CharField(max_length=3, choices=opciones, verbose_name='Categoría')
