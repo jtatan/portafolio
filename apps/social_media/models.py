@@ -17,7 +17,7 @@ class SocialMedia(models.Model):
     imagen = models.ImageField(upload_to='medios_sociales', default='')
 
     class Meta:
-        db_table = "SocialMedia"
+        db_table = "apps_socialmedia"
         verbose_name = 'Red Social'
         verbose_name_plural = 'Redes Sociales'
 

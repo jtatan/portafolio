@@ -6,7 +6,7 @@ class Slider(models.Model):
     imagen = models.ImageField(upload_to='slider', verbose_name='Imagen Slider')
 
     class Meta:
-        db_table = "Slider"
+        db_table = "apps_slider"
         verbose_name = 'Slider'
         verbose_name_plural = 'Publicaciones de Slider'
 

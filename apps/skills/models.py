@@ -12,7 +12,7 @@ class Skill(models.Model):
     categoria = models.CharField(max_length=3, choices=opciones, verbose_name='Categoría')
 
     class Meta:
-        db_table = "Skill"
+        db_table = "apps_skill"
         verbose_name = 'Habilidad'
         verbose_name_plural = 'Habilidades'
 
