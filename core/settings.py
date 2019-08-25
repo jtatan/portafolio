@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.skills',
     'apps.slider',
+    'apps.articles',
 ]
 
 MIDDLEWARE = [
