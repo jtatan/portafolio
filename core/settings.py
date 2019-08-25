@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'apps.skills',
     'apps.slider',
     'apps.articles',
+    'apps.social_media',
 ]
 
 MIDDLEWARE = [
