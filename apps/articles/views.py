@@ -5,7 +5,7 @@ from .models import Articulo
 
 class ArticuloVista(ListView):
     model = Articulo
-    template_name = 'labs/lista.html'
+    template_name = 'labs.html'
     context_object_name = 'articulos'
 
     def get_context_data(self, **kwargs):

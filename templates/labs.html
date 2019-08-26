@@ -1,0 +1,7 @@
+{% extends 'index.html' %}
+{% block contenido %}
+{% for a in articulos %}
+{{ a.titulo }}
+{{ a.cuerpo }}
+{% endfor %}
+{% endblock contenido %}
