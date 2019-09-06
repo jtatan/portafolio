@@ -11,11 +11,12 @@
 <body>
 {% include 'layout/body/nav.html' %}
 {% block contenido %}
-    <div class="">
-        <div style="background: url('https://media.gettyimages.com/photos/portrait-of-smiling-male-computer-programmer-against-beige-wall-in-picture-id755650827') no-repeat center center; background-size: cover; margin-top: 0em; height: 600px; width: 100%;">
+    {% for s in slider %}
+        <div class="">
+            <div style="background: url('{{ MEDIA_URL }}{{ s.imagen }}') no-repeat center center; background-size: cover; margin-top: 0em; height: 600px; width: 100%;">
+            </div>
         </div>
-    </div>
-
+    {% endfor %}
 
     <div class="py-5 text-white" style="background: #7095FF;" id="descripcion">
         <div class="container">
@@ -26,18 +27,44 @@
     </div>
     <div class="py-5">
         <div class="container">
-            <h2>CV</h2>
-            <hr/>
-            <section class="row">
-                <figure class="col-1">
-                    <a href=""><img class="img-fluid" src="https://image.flaticon.com/icons/png/512/61/61109.png"/></a>
+            <!--<h2>CV</h2>-->
+            <section class="text-center">
+                <figure class="col-12">
+                    <a><img class="img-fluid" style="width: 100px; height: 100px;"
+                            src="{% static 'img/logo/logo_black.png' %}"></a>
                 </figure>
-                <figure class="col-1">
-                    <a href=""><img class="img-fluid" src="https://image.flaticon.com/icons/png/512/61/61109.png"/></a>
+            </section>
+            <hr class="my-5"/>
+            <section class="row d-flex justify-content-center">
+                <figure class="col-4 col-sm-2 text-center">
+                    <a href="{% static 'files/CV_sp.pdf' %}">
+                        <img class="img-fluid"
+                             src="{% static 'img/icons/elements/cv_icon_dev.png' %}"/>
+                        <div class="text-center">
+                            <p>CV Desarrollador</p>
+                        </div>
+                    </a>
                 </figure>
-                <figure class="col-1">
-                    <a href=""><img class="img-fluid" src="https://image.flaticon.com/icons/png/512/61/61109.png"/></a>
+                <figure class="col-4 col-sm-2 text-center">
+                    <a href="{% static 'files/CV_sp.pdf' %}">
+                        <img class="img-fluid"
+                             src="{% static 'img/icons/elements/cv_icon.png' %}"/>
+                        <div class="text-center">
+                            <p>CV Completo</p>
+                        </div>
+                    </a>
                 </figure>
+                <figure class="col-4 col-sm-2 text-center">
+                    <a href="{% static 'files/CV_sp.pdf' %}">
+                        <img class="img-fluid"
+                             src="{% static 'img/icons/elements/cv_icon_ani.png' %}"/>
+                        <div class="text-center">
+                            <p>CV Animador Digital y Multimedia</p>
+                        </div>
+                    </a>
+                </figure>
+
+
             </section>
         </div>
     </div>
@@ -50,11 +77,18 @@
                 <hr/>
                 <section class="row">
                     {% for m_soc in medios_sociales %}
+                        <!-- LINKEDIN .......... -->
+                        {% if m_soc.nombre == 'LI' %}
+                            <figure class="col-1">
+                                <a href="{{ m_soc.enlace }}"><img class="img-fluid"
+                                                                  src="https://image.flaticon.com/icons/png/512/61/61109.png"/></a>
+                            </figure>
+                        {% endif %}
                         <!-- FACEBOOK .......... -->
                         {% if m_soc.nombre == 'FB' %}
                             <figure class="col-1">
                                 <a href="{{ m_soc.enlace }}"><img class="img-fluid"
-                                                                  src="https://image.flaticon.com/icons/png/512/61/61109.png"/></a>
+                                                                  src="https://image.flaticon.com/icons/png/512/33/33702.png"/></a>
                             </figure>
                         {% endif %}
 
