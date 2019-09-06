@@ -8,6 +8,5 @@ h1, h2, h3, h4, h5, h6 {
   animation: progressAnimationStrike 6s;
 }
 @keyframes progressAnimationStrike {
-     from { width: 0 }
-     to   { width: 85% }
+     0% { width: 0; }
 }

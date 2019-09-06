@@ -1,7 +1,7 @@
 {% for s in slider %}
-<div class="scroll">
+<div class="" data-aos="fade-right" data-aos-duration="2000">
     <div style="background: url('{{ MEDIA_URL }}{{ s.imagen }}') no-repeat center center; background-size: cover; margin-top: 0em; height: 600px; width: 100%;">
-        <div class="py-4 px-5 text-white text-right" style="position: absolute; right: 0px; bottom: 5%; background: rgba(0,0,0, .5);">
+        <div class="py-4 px-5 text-white text-right" data-aos="fade-right" data-aos-duration="3000" style="position: absolute; right: 0px; bottom: 5%; background: rgba(0,0,0, .5);">
             <h2>{{ s.titulo }}</h2>
             <hr class="my-0" />
             <p>{{ s.cuerpo }}</p>
