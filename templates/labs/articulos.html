@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block contenido %}
+<div class="container my-5">
+    <!-- Artículo -->
+    <div class="row shadow my-5" data-aos="fade-up" data-aos-duration="1800">
+        <!-- Imagen -->
+        <section class="p-3">
+            <figure>
+                <a><img class="img-fluid" src="{{ MEDIA_URL }}{{ articulo.imagen }}"></a>
+            </figure>
+        </section>
+        <!-- Contenido -->
+        <section class="p-3">
+            <!-- Titulo -->
+            <h2> {{ articulo.titulo }}</h2>
+            <hr class="my-0"/>
+            <small>{{ articulo.fecha }}</small>
+            <!--  Cuerpo -->
+            <p class="text-justify my-2">{{ articulo.cuerpo }}</p>
+            <!-- Categorías -->
+            <hr class="my-2"/>
+            {% for cat in articulo.categorias.all %}
+            <a class="btn btn-primary text-white"><small>{{ cat }}</small></a>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+{% endblock contenido %}

@@ -5,7 +5,7 @@ from .models import Articulo
 
 class ArticuloVista(ListView):
     model = Articulo
-    template_name = 'labs/lista.html'
+    template_name = 'labs.html'
     context_object_name = 'articulos'
 
     def get_context_data(self, **kwargs):
@@ -14,8 +14,9 @@ class ArticuloVista(ListView):
 
 
 class ArticuloDetalleVista(DetailView):
-    template_name = "labs/articulo.html"
+    template_name = 'labs/articulos.html'
     queryset = Articulo.objects.all()
+    context_object_name = 'articulo'
 
     def get_object(self):
         slug_ = self.kwargs.get("slug")

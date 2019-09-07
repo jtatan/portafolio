@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!-- ......... SECCION PROYECTOS ......... -->
+<div class="py-5" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+        <h2>Proyectos</h2>
+        <hr/>
+        <section class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    {% for p in proyectos %}
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <img src="{{ MEDIA_URL }}{{ p.imagen }}"
+                                 class="card-img" alt="">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ p.titulo }}</h5>
+                                <p class="card-text text-justify text-secondary">{{ p.cuerpo|truncatechars:90  }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-dark btn-block" href="{% url 'articulos:detalle' p.slug %}">Ver</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- ......... FIN SECCION PROYECTOS ......... -->

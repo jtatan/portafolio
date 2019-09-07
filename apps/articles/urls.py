@@ -5,6 +5,6 @@ from . import views
 
 
 urlpatterns = [
-    path('labs/', ArticuloVista.as_view(), name='articulos'),
-    path('labs/<slug>/', ArticuloDetalleVista.as_view(), name='articulo-detalle')
+    path('labs/', ArticuloVista.as_view(), name='lista'),
+    path('labs/<slug>/', ArticuloDetalleVista.as_view(), name='detalle')
 ]

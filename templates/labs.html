@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block contenido %}
+<div class="container my-5">
+    {% for a in articulos %}
+    <!-- Artículo -->
+    <div class="row shadow my-5" data-aos="fade-left" data-aos-duration="1000">
+        <!-- Imagen -->
+        <section class="col-12 col-lg-4 p-3">
+            <figure>
+                <a><img class="img-fluid" src="{{ MEDIA_URL }}{{a.imagen}}"></a>
+            </figure>
+        </section>
+        <!-- Contenido -->
+        <section class="col-lg-8 p-3">
+            <!-- Titulo -->
+            <a href="{% url 'articulos:detalle' a.slug %}"><h2> {{ a.titulo }}</h2></a>
+            <hr class="my-0"/>
+            <small>{{ a.fecha }}</small>
+            <!--  Cuerpo -->
+            <p class="text-justify my-2">{{ a.cuerpo|truncatechars:300 }}</p>
+            <!-- Categorías -->
+            <hr class="my-2"/>
+            {% for cat in a.categorias.all %}
+            <a class="btn btn-primary text-white"><small>{{ cat }}</small></a>
+            {% endfor %}
+        </section>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock contenido %}
