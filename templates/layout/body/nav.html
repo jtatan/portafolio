@@ -1,35 +1,49 @@
 {% load staticfiles %}
 <!-- Menú .......... -->
-<nav class="navbar navbar-expand-sm navbar-fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><img class="img-fluid" style="width: 50px; height: 50px;"
-                                          src="{% static 'img/logo/logo_black.png' %}"></a>
-    <button class="material-icons navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-            data-target="#collapseMenu"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
-        menu
-    </button>
-    <div class="collapse navbar-collapse" id="collapseMenu">
-        <ul class="navbar-nav mx-auto row text-center">
-            <!--<li class="nav-item active col-3">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>-->
-            <li class="nav-item col-4">
-                <a class="nav-link" href="#descripcion">Conóceme</a>
-            </li>
-            <li class="nav-item col-4">
-                <a class="nav-link" href="#portafolio">Portafolio</a>
-            </li>
-            <!--<li class="nav-item col-2">
-                <a class="nav-link" href="#">Contacto,</a>
-            </li>-->
-            <li class="nav-item col-4">
-                <a class="nav-link" href="{% url 'articulos' %}">Labs</a>
-            </li>
-            <!--<li class="nav-item col-2">
-                <a class="nav-link" href="#">CV</a>
-            </li>-->
-        </ul>
-    </div>
+<nav class="navbar navbar-expand-sm navbar-fixed-top navbar-dark bg-dark" id="inicio">
+    {% with url_name=request.resolver_match.url_name %}
+    {% if url_name == 'index' %}
+    <a class="navbar-brand" href="#inicio">
+        {% else %}
+        <a class="navbar-brand" href="{% url 'index' %}">
+            {% endif %}
+            <img class="img-fluid" style="width: 50px; height: 50px;" src="{% static 'img/logo/logo_black.png' %}"></a>
+        <button class="material-icons navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapseMenu"
+                aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+            menu
+        </button>
+        <div class="collapse navbar-collapse" id="collapseMenu">
+            <ul class="navbar-nav mx-auto row text-center">
+                <!--<li class="nav-item active col-3">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>-->
+                <li class="nav-item col-4">
+                    {% if url_name == 'index' %}
+                    <a class="nav-link" href="#descripcion">Conóceme</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'index' %}#descripcion">Conóceme</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item col-4">
+                    {% if url_name == 'index' %}
+                    <a class="nav-link" href="#portafolio">Portafolio</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'index' %}#portafolio">Portafolio</a>
+                    {% endif %}
+                </li>
+                <!--<li class="nav-item col-2">
+                    <a class="nav-link" href="#">Contacto,</a>
+                </li>-->
+                <li class="nav-item col-4">
+                    <a class="nav-link" href="{% url 'articulos' %}">Labs</a>
+                </li>
+                <!--<li class="nav-item col-2">
+                    <a class="nav-link" href="#">CV</a>
+                </li>-->
+            </ul>
+        </div>
+        {% endwith %}
 </nav>
 <!-- Fin Menú .......... -->
