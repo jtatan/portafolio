@@ -20,7 +20,7 @@
             <!-- Categorías -->
             <hr class="my-2"/>
             {% for cat in articulo.categorias.all %}
-            <a class="btn btn-primary text-white"><small>{{ cat }}</small></a>
+            <a class="btn btn-primary text-white" href="{% url 'articulos:categoria-detalle' cat.slug %}"><small>{{ cat }}</small></a>
             {% endfor %}
         </section>
     </div>

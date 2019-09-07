@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block contenido %}
+<div class="container my-5">
+    {% for a in categorias %}
+    <!-- Artículo -->
+    <div class="row shadow my-5" data-aos="fade-left" data-aos-duration="1000">
+        <!-- Imagen -->
+        <section class="col-12 col-lg-4 p-3">
+            <figure>
+                <a><img class="img-fluid" src="{{ MEDIA_URL }}{{a.imagen}}"></a>
+            </figure>
+        </section>
+        <!-- Contenido -->
+        <section class="col-lg-8 p-3">
+            <!-- Titulo -->
+            <a href="{% url 'articulos:categoria-detalle' a.slug %}"><h2> {{ a.nombre }}</h2></a>
+        </section>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock contenido %}
