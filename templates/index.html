@@ -113,6 +113,7 @@
 {% endif %}
 <!-- ......... FIN SECCION MEDIOS SOCIALES ......... -->
 
+{% if habilidades_dev or habilidades_cgi %}
 <!-- ......... SECCION HABILIDADES ......... -->
 <div class="py-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
@@ -146,15 +147,13 @@
                         {{ h_cgi.porcentaje }}%
                     </div>
                 </div>
-
                 {% endfor %}
-
             </section>
         </div>
     </div>
 </div>
-
-
+<!-- ......... FIN SECCION HABILIDADES ......... -->
+{% endif %}
 <!--<section class="col-6">
     <label>HTML/CSS</label>
     <div class="progress">
@@ -271,7 +270,7 @@
         </div>
     </div>
 </section>-->
-<!-- ......... FIN SECCION HABILIDADES ......... -->
+
 
 <!-- ......... SECCION CONTACTO ......... -->
 <div class="py-5" data-aos="fade-up" data-aos-duration="1000">
