@@ -14,8 +14,9 @@ class ArticuloVista(ListView):
 
 
 class ArticuloDetalleVista(DetailView):
-    template_name = "labs/articulo.html"
+    template_name = 'labs/articulos.html'
     queryset = Articulo.objects.all()
+    context_object_name = 'articulo'
 
     def get_object(self):
         slug_ = self.kwargs.get("slug")

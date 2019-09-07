@@ -13,7 +13,7 @@
         <!-- Contenido -->
         <section class="col-lg-8 p-3">
             <!-- Titulo -->
-            <h2> {{ a.titulo }}</h2>
+            <a href="{% url 'articulos:detalle' a.slug %}"><h2> {{ a.titulo }}</h2></a>
             <hr class="my-0"/>
             <small>{{ a.fecha }}</small>
             <!--  Cuerpo -->
