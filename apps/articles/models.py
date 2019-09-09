@@ -32,6 +32,7 @@ class Articulo(models.Model):
 
     class Meta:
         db_table = 'apps_articulo'
+        ordering = ['-id']
 
     def save(self, *args, **kwargs):
         if not self.slug:

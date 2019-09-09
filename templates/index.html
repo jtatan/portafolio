@@ -112,48 +112,8 @@
 </div>
 {% endif %}
 <!-- ......... FIN SECCION MEDIOS SOCIALES ......... -->
+{% include 'inicio/habilidades.html' %}
 
-{% if habilidades_dev or habilidades_cgi %}
-<!-- ......... SECCION HABILIDADES ......... -->
-<div class="py-5" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-        <h2>Habilidades</h2>
-        <hr/>
-        <div class="row">
-            <section class="col-6">
-                {% for h_dev in habilidades_dev %}
-                <label>{{ h_dev.nombre }}</label>
-                <div class="progress">
-                    <div class="progress-bar progress-striped" role="progressbar"
-                         style="width:{{ h_dev.porcentaje }}%;"
-                         aria-valuenow="{{ h_dev.porcentaje }}"
-                         aria-valuemin="0"
-                         aria-valuemax="100">
-                        {{ h_dev.porcentaje }}%
-                    </div>
-                </div>
-
-                {% endfor %}
-            </section>
-            <section class="col-6">
-                {% for h_cgi in habilidades_cgi %}
-                <label>{{ h_cgi.nombre }}</label>
-                <div class="progress">
-                    <div class="progress-bar progress-striped" role="progressbar"
-                         style="width:{{ h_cgi.porcentaje }}%;"
-                         aria-valuenow="{{ h_cgi.porcentaje }}"
-                         aria-valuemin="0"
-                         aria-valuemax="100">
-                        {{ h_cgi.porcentaje }}%
-                    </div>
-                </div>
-                {% endfor %}
-            </section>
-        </div>
-    </div>
-</div>
-<!-- ......... FIN SECCION HABILIDADES ......... -->
-{% endif %}
 <!--<section class="col-6">
     <label>HTML/CSS</label>
     <div class="progress">
@@ -277,26 +237,8 @@
     <div class="container">Contacto</div>
 </div>
 <!-- ......... FIN SECCION CONTACTO ......... -->
-<!-- ......... SECCION PORTAFOLIO ......... -->
-<div class="py-5" id="portafolio">
-    <div class="container" data-aos="fade-up" data-aos-duration="1000">
-        <h2>Portafolio</h2>
-        <hr/>
-        <section class="row">
-            <div class="col-6 text-center">
-                <i class="material-icons" style="font-size: 4em;">video_label</i>
-                <h3>Audiovisual</h3>
-            </div>
-            <div class="col-6 text-center">
-                <a class="material-icons" style="font-size: 4em;">code</a>
-                <h3>Desarrollo</h3>
-                <img class="img-fluid" src="https://about.gitlab.com/images/press/logo/png/gitlab-logo-gray-rgb.png"
-                     style="width: 50%;">
-            </div>
-        </section>
-    </div>
-</div>
-<!-- ......... FIN SECCION PORTAFOLIO ......... -->
+
+{% include 'inicio/portafolio.html' %}
 
 {% include 'inicio/proyectos.html' %}
 
