@@ -15,5 +15,6 @@ class IndexView(TemplateView):
         context['habilidades_cgi'] = Skill.objects.filter(categoria='cgi')
         context['medios_sociales'] = SocialMedia.objects.all()
         context['slider'] = Slider.objects.all()
-        context['proyectos'] = Articulo.objects.filter(categorias=3)
+        context['proyectos'] = Articulo.objects.filter(categorias__nombre='proyectos')
+        context['portafolio'] = Articulo.objects.filter(categorias__nombre='portafolio')
         return context
