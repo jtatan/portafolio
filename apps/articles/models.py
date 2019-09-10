@@ -13,6 +13,7 @@ class Categoria(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = get_unique_slug(self, 'nombre', 'slug')
+        self.nombre = self.nombre.lower()
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
