@@ -13,7 +13,7 @@ class SocialMedia(models.Model):
     }
 
     nombre = models.CharField(max_length=2, choices=redes, verbose_name='Nombre')
-    enlace = models.URLField(verbose_name='URL de la Red Social')
+    enlace = models.CharField(max_length=100, verbose_name='URL de la Red Social')
     imagen = models.ImageField(upload_to='medios_sociales', default='', null=True, blank=True, verbose_name='Imágen')
 
     class Meta:
